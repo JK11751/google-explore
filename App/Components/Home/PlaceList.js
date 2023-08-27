@@ -7,10 +7,7 @@ import { useNavigation } from '@react-navigation/native'
 
 export default function PlaceList({placeList}) {
 
-  const navigator=useNavigation();
-  const onPlaceClick=(item)=>{
-    navigator.navigate('place-detail',{place:item}); 
-  }
+  
   return (
     <View>
       <Text
@@ -20,13 +17,10 @@ export default function PlaceList({placeList}) {
       <FlatList
       data={placeList}
       renderItem={({item,index})=>(
-        <TouchableOpacity key={index} 
-        onPress={()=>onPlaceClick(item)}>
-            {index%4==0?
+            index%4==0?
             <PlaceItemBig place={item} />
-            :<PlaceItem place={item} />}
-         </TouchableOpacity>
-            
+            :<PlaceItem place={item} />
+      
       )}
       />
     </View>

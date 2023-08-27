@@ -7,6 +7,7 @@ import GlobalApi from '../Services/GlobalApi'
 //import PlaceList from '../Components/Home/PlaceList'
 import { ScrollView } from 'react-native'
 import { UserLocationContext } from '../Context/UserLocationContext'
+import PlaceList from '../Components/Home/PlaceList'
 
 export default function Home() {
 
@@ -31,6 +32,7 @@ export default function Home() {
         <Header/>
         <GoogleMapView placeList={placeList} />
         <CategoryList />
+        {placeList? <PlaceList placeList={placeList}/>:null}
        
     </ScrollView>
   )

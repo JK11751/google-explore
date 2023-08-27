@@ -7,7 +7,7 @@ import HorizontalLine from "./HorizontalLine";
 export default function PlaceItemBig({ place }) {
   return (
     <View style={{marginTop:20}}>
-     {place?.photos?  <Image
+     <Image
         source={{
           uri:
             "https://maps.googleapis.com/maps/api/place/photo" +
@@ -17,7 +17,7 @@ export default function PlaceItemBig({ place }) {
             "&key=AIzaSyAlIDUiTW6M9p6qb7mHsMCvqk0_OMO3MV0",
         }}
         style={{ width: "100%", height: 130, borderRadius: 15 }}
-      />:null}
+      />
       <Text
         numberOfLines={2}
         style={{ fontSize: 18, marginBottom: 2, fontFamily: "raleway-bold" }}
