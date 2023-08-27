@@ -20,11 +20,22 @@
     "android": {
       "adaptiveIcon": {
         "foregroundImage": "./assets/adaptive-icon.png",
-        "backgroundColor": "#ffffff"
+        "backgroundColor": "#ffffff",
+        "googleServicesFile": "./google-services.json",
+        "package":"com.tubeguruji.findplace",
+        "googleMapsApiKey":"AIzaSyAlIDUiTW6M9p6qb7mHsMCvqk0_OMO3MV0"
       }
     },
     "web": {
       "favicon": "./assets/favicon.png"
-    }
+    },
+    "plugins": [
+      [
+        "expo-location",
+        {
+          "locationAlwaysAndWhenInUsePermission": "Allow google-explore to use your location."
+        }
+      ]
+    ]
   }
 }
