@@ -39,7 +39,7 @@ export default function CategoryList() {
         style={{marginTop:5}}
         renderItem={({item})=>(
           <TouchableOpacity 
-          onPress={()=>(item.value)} >
+          onPress={()=>console.log(item.value)} >
             <CategoryItem category={item} />
           </TouchableOpacity>
         )}

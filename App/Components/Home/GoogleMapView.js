@@ -1,11 +1,11 @@
 import { View, Text, Dimensions } from "react-native";
 import React, { useContext, useEffect, useState } from "react";
 import MapView, { Marker, PROVIDER_GOOGLE } from "react-native-maps";
-import { UserLocationContext } from "../Context/UserLocationContext";
+import { UserLocationContext } from "../../Context/UserLocationContext";
 //import PlaceMarker from "./PlaceMarker";
-//import Colors from "../../Shared/Colors";
+import Colors from "../../Shared/Colors";
 
-export default function GoogleMapView() {
+export default function GoogleMapView({placeList}) {
   const [mapRegion, setmapRegion] = useState([]);
 
   const { location, setLocation } = useContext(UserLocationContext);
@@ -30,7 +30,7 @@ export default function GoogleMapView() {
         Top Near By Places
       </Text>
       <View style={{ borderRadius: 20, overflow: "hidden" }}>
-     <MapView
+    {location?    <MapView
           style={{
             width: Dimensions.get("screen").width * 0.89,
             height: Dimensions.get("screen").height * 0.23,
@@ -43,9 +43,8 @@ export default function GoogleMapView() {
             title="You" 
             coordinate={mapRegion}
              />
-            
            
-        </MapView>
+        </MapView>:null} 
         
       </View>
      

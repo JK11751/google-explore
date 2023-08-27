@@ -9,7 +9,7 @@ export default function CategoryItem({category}) {
     <View style={{padding:5,alignItems:'center',
     margin:5,width:95,height:95,justifyContent:'center',
     borderRadius:15,
-    backgroundColor:Colors.WHITE}}>
+    backgroundColor:Colors.GRAY}}>
         <Image source={category.icon}
             style={{width:40,height:30}}
         />
