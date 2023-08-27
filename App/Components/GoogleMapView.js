@@ -1,43 +1,54 @@
-import { StyleSheet,Dimensions, View } from 'react-native'
-import React, { useState, useContext, useEffect } from 'react';
-import MapView, {PROVIDER_GOOGLE} from 'react-native-maps';
-import { UserLocationContext } from '../Context/UserLocationContext';
-
+import { View, Text, Dimensions } from "react-native";
+import React, { useContext, useEffect, useState } from "react";
+import MapView, { Marker, PROVIDER_GOOGLE } from "react-native-maps";
+import { UserLocationContext } from "../Context/UserLocationContext";
+//import PlaceMarker from "./PlaceMarker";
+//import Colors from "../../Shared/Colors";
 
 export default function GoogleMapView() {
-    const[mapRegion, setmapRegion]= useState ({});
-    const { location, setLocation } = useContext(UserLocationContext);
-    
-    useEffect(()=>{
-        if(location )
-    { 
+  const [mapRegion, setmapRegion] = useState([]);
+
+  const { location, setLocation } = useContext(UserLocationContext);
+
+  useEffect(()=>{
+    if(location)
+    {
         setmapRegion({
             latitude: location.coords.latitude,
-            longitude:location.coords.longitude,
+            longitude: location.coords.longitude,
             latitudeDelta: 0.0422,
             longitudeDelta: 0.0421,
         })
-
-
     }
-    },[])
+  },[location])
+ 
+
   return (
-    <View style={{marginTop:20, bordeRadius:20, overflow:'hidden'}}>
-       <MapView
-        style={{
-                width: Dimensions.get("screen").width * 0.89,
-                height: Dimensions.get("screen").height * 0.23,
-
-        }}
-        provider={PROVIDER_GOOGLE}
-        showsUserLocation={true}
-        region={mapRegion}
-
-       >
-
-       </MapView>
+    <View style={{ marginTop: 20 }}>
+      <Text style={{ fontSize: 20, 
+        marginBottom: 10, fontWeight: "600",fontFamily:'raleway-bold' }}>
+        Top Near By Places
+      </Text>
+      <View style={{ borderRadius: 20, overflow: "hidden" }}>
+     <MapView
+          style={{
+            width: Dimensions.get("screen").width * 0.89,
+            height: Dimensions.get("screen").height * 0.23,
+          }}
+          provider={PROVIDER_GOOGLE}
+          showsUserLocation={true}
+          region={mapRegion}
+        >
+            <Marker 
+            title="You" 
+            coordinate={mapRegion}
+             />
+            
+           
+        </MapView>
+        
+      </View>
+     
     </View>
-  )
+  );
 }
-
-const styles = StyleSheet.create({})
