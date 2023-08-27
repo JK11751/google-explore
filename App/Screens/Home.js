@@ -20,7 +20,7 @@ export default function Home() {
   },[location])
   
   const GetNearBySearchPlace=(value)=>{
-    console.log("category", value);
+ 
    
     GlobalApi.nearByPlace(location.coords.latitude,
       location.coords.longitude,value).then(resp=>{
