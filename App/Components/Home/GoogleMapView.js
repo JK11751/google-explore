@@ -43,7 +43,9 @@ export default function GoogleMapView({placeList}) {
             title="You" 
             coordinate={mapRegion}
              />
-           
+           {placeList.map((item,index)=>index<=4&&(
+                <PlaceMarker item={item} key={index} />
+            ))}
            
         </MapView>:null} 
         

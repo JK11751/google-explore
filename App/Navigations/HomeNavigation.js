@@ -2,7 +2,7 @@ import { View, Text } from 'react-native'
 import React from 'react'
 import { TransitionPresets, createStackNavigator } from '@react-navigation/stack'
 import Home from '../Screens/Home';
-//import PlaceDetail from '../Components/PlaceDetail/PlaceDetail';
+import PlaceDetail from '../Components/PlaceDetail/PlaceDetail';
 
 export default function HomeNavigation() {
     const isAndroid=true;
