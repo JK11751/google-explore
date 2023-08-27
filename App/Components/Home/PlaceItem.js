@@ -14,7 +14,7 @@ export default function PlaceItem({ place }) {
         marginTop:20
       }}
     >
-    <Image
+    {place?.photos?  <Image
         source={{uri:
           "https://maps.googleapis.com/maps/api/place/photo" +
           "?maxwidth=400" +
@@ -23,7 +23,10 @@ export default function PlaceItem({ place }) {
           "&key=AIzaSyAlIDUiTW6M9p6qb7mHsMCvqk0_OMO3MV0",
         }}
         style={{ width: 110, height: 110, borderRadius: 15 }}
-      />
+      />:
+      <Image source={require('./../../../assets/placeholder.jpg')}
+      style={{ width: 110, height: 110, borderRadius: 15 }}
+      />}
       <View style={{flex:1}}>
         <Text
           numberOfLines={2}
@@ -51,8 +54,6 @@ export default function PlaceItem({ place }) {
         </View>
 
       </View>
-    
-
     </View>
   );
 }

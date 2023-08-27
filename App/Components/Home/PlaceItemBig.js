@@ -41,7 +41,6 @@ export default function PlaceItemBig({ place }) {
           <AntDesign name="star" size={20} color={Colors.YELLOW} />
           <Text>{place.rating}</Text>
         </View>
-          <HorizontalLine/>
     </View>
   );
 }

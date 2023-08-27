@@ -6,7 +6,7 @@ const API_KEY="AIzaSyAlIDUiTW6M9p6qb7mHsMCvqk0_OMO3MV0"
 
 const nearByPlace=(lat,lng,type)=>axios.get(BASE_URL+
     "/nearbysearch/json?"+
-    "&location=-33.8670522%2C151.1957362&radius=1500&type=restaurant"
+    "&location="+lat+","+lng+"&radius=1500&type="+type
     +"&key="+API_KEY)
 
 

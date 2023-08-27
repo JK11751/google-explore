@@ -3,7 +3,7 @@ import React from 'react'
 import { FlatList } from 'react-native'
 import CategoryItem from './CategoryItem'
 
-export default function CategoryList() {
+export default function CategoryList({setSelectedCategory}) {
   const categoryList=[
     {
         id:1,
@@ -39,7 +39,7 @@ export default function CategoryList() {
         style={{marginTop:5}}
         renderItem={({item})=>(
           <TouchableOpacity 
-          onPress={()=>console.log(item.value)} >
+          onPress={()=>setSelectedCategory(item.value)} >
             <CategoryItem category={item} />
           </TouchableOpacity>
         )}

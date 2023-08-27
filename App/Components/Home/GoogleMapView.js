@@ -2,7 +2,7 @@ import { View, Text, Dimensions } from "react-native";
 import React, { useContext, useEffect, useState } from "react";
 import MapView, { Marker, PROVIDER_GOOGLE } from "react-native-maps";
 import { UserLocationContext } from "../../Context/UserLocationContext";
-//import PlaceMarker from "./PlaceMarker";
+import PlaceMarker from "./PlaceMarker";
 import Colors from "../../Shared/Colors";
 
 export default function GoogleMapView({placeList}) {
@@ -43,6 +43,7 @@ export default function GoogleMapView({placeList}) {
             title="You" 
             coordinate={mapRegion}
              />
+           
            
         </MapView>:null} 
         
